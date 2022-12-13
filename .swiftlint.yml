@@ -1,0 +1,6 @@
+
+included:
+  - JetDevsHomeWork
+
+excluded:
+  - Pods

@@ -23,8 +23,9 @@ class AccountViewController: UIViewController {
 		nonLoginView.isHidden = false
 		loginView.isHidden = true
     }
-	
 	@IBAction func loginButtonTap(_ sender: UIButton) {
-	}
-	
+        let loginViewController = LoginViewController()
+        loginViewController.modalPresentationStyle = .fullScreen
+        self.present(loginViewController, animated: true)
+    }
 }
