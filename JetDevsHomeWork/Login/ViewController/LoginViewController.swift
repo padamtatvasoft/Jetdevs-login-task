@@ -30,12 +30,12 @@ class LoginViewController: BaseViewController {
         self.emailTextField.setupData(textFieldPlaceHolder: "Email",
                                       title: "Email",
                                       isSecuredTextField: false,
-                                      errorMessage: "this is a invalid email.")
+                                      errorMessage: "Invalid email address")
         self.passwordTextField.setupData(textFieldPlaceHolder: "Password",
                                          title: "Password",
                                          isSecuredTextField: true,
                                          errorMessage:
-                                            "Password require at least 1 uppercase, 1 lowercase and 1 number.")
+                                            "Password must contains one uppercase, one lowercase and one digit.")
         self.viewModel.alertDialog.subscribe(onNext: { [weak self] alertMessage in
             guard let `self` = self else {
                 return
@@ -116,7 +116,7 @@ extension LoginViewController: UITextFieldDelegate {
             let currentString = (textField.text ?? "") as NSString
             let newString = currentString.replacingCharacters(in: range, with: string)
             self.viewModel.validatePasswordField()
-            return newString.count <= 16
+            return newString.count <= 14
         }
         return true
     }
