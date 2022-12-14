@@ -30,6 +30,23 @@ class LoginViewModel: BaseViewModel {
     func callLoginAPI() {
         if self.isValidEmailAddress.value && self.isValidPassword.value {
            self.state.onNext(.loading)
+            LoginInteractor.loginAPICall(username: email.value, password: password.value)
+                .observeOn(SerialDispatchQueueScheduler(qos: .default))
+                .subscribe(onNext: { [weak self] (result) in
+                    guard let `self` = self else {
+                        return
+                    }
+                    switch result {
+                    case .success(let response):
+                        if let userObj = response.data?.userObj {
+                            UserDefaults.user = userObj
+                        }
+                        self.state.onNext(.success(self))
+                    case .failure(let error):
+                         self.errorInApi(error)
+                        self.state.onNext(.failure)
+                    }
+                }).disposed(by: disposeBag)
         }
     }
 }

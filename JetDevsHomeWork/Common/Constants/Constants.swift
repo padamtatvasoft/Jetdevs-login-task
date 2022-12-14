@@ -12,7 +12,7 @@ import RxRelay
 var appName: String {
     return (Bundle.main.infoDictionary?["CFBundleName"] as? String) ?? ("JetDevs")
 }
-
+let loginAPIURL = "https://jetdevs.mocklab.io/login"
 let screenFrame: CGRect = UIScreen.main.bounds
 let screenWidth = screenFrame.size.width
 let screenHeight = screenFrame.size.height

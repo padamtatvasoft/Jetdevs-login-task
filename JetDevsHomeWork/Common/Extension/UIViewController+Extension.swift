@@ -30,6 +30,7 @@ extension UIViewController {
     func showProgressActivity() {
         DispatchQueue.main.async {
             self.view.endEditing(true)
+            SVProgressHUD.setDefaultMaskType(.black)
             SVProgressHUD.show(withStatus: "Logging in...")
         }
     }
