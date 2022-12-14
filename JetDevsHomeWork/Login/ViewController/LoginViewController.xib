@@ -56,6 +56,9 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wot-hy-6kZ" customClass="JetTextfield" customModule="JetDevsHomeWork" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="100" width="305" height="80"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="80" id="xJt-9b-PRD"/>
+                                    </constraints>
                                 </view>
                             </subviews>
                         </stackView>

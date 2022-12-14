@@ -17,11 +17,7 @@ class AccountViewController: UIViewController {
 	@IBOutlet weak var headImageView: UIImageView!
 	override func viewDidLoad() {
         super.viewDidLoad()
-
 		self.navigationController?.navigationBar.isHidden = true
-        // Do any additional setup after loading the view.
-		nonLoginView.isHidden = false
-		loginView.isHidden = true
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
