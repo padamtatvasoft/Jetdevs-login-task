@@ -39,7 +39,8 @@ class BaseViewModel {
             )
         case .connectionError:
             self.alertDialog.onNext(("Connection Error"))
-        case .middlewareError(let _, let message):
+        case .middlewareError(let code, let message):
+            print(code)
             self.alertDialog.onNext((message))
         case .invalidJSONFormat:
             print("invalidJSONFormat")

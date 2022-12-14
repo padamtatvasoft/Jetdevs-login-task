@@ -41,20 +41,20 @@
                     <rect key="frame" x="95" y="137" width="185" height="70"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Svs-Nn-Ekd">
-                    <rect key="frame" x="35" y="259" width="305" height="179"/>
+                    <rect key="frame" x="35" y="259" width="305" height="180"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="vU8-zY-pmw">
-                            <rect key="frame" x="0.0" y="0.0" width="305" height="179"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vU8-zY-pmw">
+                            <rect key="frame" x="0.0" y="0.0" width="305" height="180"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lDc-70-IV4" customClass="JetTextfield" customModule="JetDevsHomeWork" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="305" height="70"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="305" height="80"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="70" id="DBS-Uo-JKr"/>
+                                        <constraint firstAttribute="height" constant="80" id="DBS-Uo-JKr"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wot-hy-6kZ" customClass="JetTextfield" customModule="JetDevsHomeWork" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="109" width="305" height="70"/>
+                                    <rect key="frame" x="0.0" y="100" width="305" height="80"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </view>
                             </subviews>
@@ -69,7 +69,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F6j-fR-yRs">
-                    <rect key="frame" x="35" y="531" width="305" height="50"/>
+                    <rect key="frame" x="35" y="532" width="305" height="50"/>
                     <color key="backgroundColor" red="0.15686274510000001" green="0.31764705879999999" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="rOW-Y5-f9J"/>

@@ -20,7 +20,6 @@ PODS:
   - SnapKit (5.0.1)
   - SVProgressHUD (2.2.5)
   - SwiftLint (0.44.0)
-  - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
   - Alamofire (= 4.9.1)
@@ -33,7 +32,6 @@ DEPENDENCIES:
   - SnapKit
   - SVProgressHUD
   - SwiftLint
-  - Toast-Swift
 
 SPEC REPOS:
   trunk:
@@ -48,7 +46,6 @@ SPEC REPOS:
     - SnapKit
     - SVProgressHUD
     - SwiftLint
-    - Toast-Swift
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
@@ -62,8 +59,7 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftLint: e96c0a8c770c7ebbc4d36c55baf9096bb65c4584
-  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: d24cd07fbc9090dbe16a6d71c1858360076f1c6a
+PODFILE CHECKSUM: f0522159b3b921df6bb1c088001d195102749af4
 
 COCOAPODS: 1.11.3

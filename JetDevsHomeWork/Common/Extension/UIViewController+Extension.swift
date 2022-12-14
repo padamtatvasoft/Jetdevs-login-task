@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 import SVProgressHUD
-import Toast_Swift
 extension UIViewController {
     func showAlert(withMessage message: String?, title: String = appName,
                    preferredStyle: UIAlertController.Style = .alert,
@@ -37,12 +36,6 @@ extension UIViewController {
     func hideProgressActivity() {
         DispatchQueue.main.async {
             SVProgressHUD.dismiss()
-        }
-    }
-    func alertToast(_ message: String) {
-        DispatchQueue.main.async {
-            self.view.hideAllToasts()
-            self.view.makeToast(message)
         }
     }
 }

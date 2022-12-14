@@ -14,9 +14,15 @@ class JetTextfield: NibView {
 
     @IBOutlet weak var textFieldTitle: UILabel!
     @IBOutlet weak var txtField: UITextField!
+    @IBOutlet weak var lblError: UILabel!
     weak var delegate: JetTextfieldDelegate?
-    func setupData(textFieldPlaceHolder: String, title: String, isSecuredTextField: Bool = false) {
-
+    func setupData(textFieldPlaceHolder: String,
+                   title: String,
+                   isSecuredTextField: Bool = false,
+                   errorMessage: String) {
+        self.txtField.autocorrectionType = .no
+        self.txtField.autocapitalizationType = .none
+        self.lblError.text = errorMessage
         self.textFieldTitle.text = title
         self.txtField.placeholder = textFieldPlaceHolder
         self.txtField.delegate = self
@@ -25,6 +31,7 @@ class JetTextfield: NibView {
         self.txtField.setRightPaddingPoints(14)
         self.txtField.layer.cornerRadius = 8.0
         self.txtField.layer.borderWidth = 1.0
+        self.lblError.isHidden = true
     }
 
     var textFieldSecureEntry: Bool {

@@ -27,8 +27,15 @@ class LoginViewController: BaseViewController {
         setupBindings()
     }
     private func setupUI() {
-        self.emailTextField.setupData(textFieldPlaceHolder: "Email", title: "Email", isSecuredTextField: false)
-        self.passwordTextField.setupData(textFieldPlaceHolder: "Password", title: "Password", isSecuredTextField: true)
+        self.emailTextField.setupData(textFieldPlaceHolder: "Email",
+                                      title: "Email",
+                                      isSecuredTextField: false,
+                                      errorMessage: "this is a invalid email.")
+        self.passwordTextField.setupData(textFieldPlaceHolder: "Password",
+                                         title: "Password",
+                                         isSecuredTextField: true,
+                                         errorMessage:
+                                            "Password require at least 1 uppercase, 1 lowercase and 1 number.")
         self.viewModel.alertDialog.subscribe(onNext: { [weak self] alertMessage in
             guard let `self` = self else {
                 return
@@ -45,6 +52,7 @@ class LoginViewController: BaseViewController {
             case .failure:
                 self.hideProgressActivity()
             case .success:
+                self.dismiss(animated: true)
                 self.hideProgressActivity()
             }
         }).disposed(by: disposeBag)
@@ -72,11 +80,13 @@ class LoginViewController: BaseViewController {
         }).disposed(by: disposeBag)
         self.viewModel.isValidEmailAddress.subscribe(onNext: { isValid in
             self.updateLoginButton()
-            self.emailTextField.borderColor = isValid ? UIColor.gray : UIColor.red
+            self.emailTextField.lblError.isHidden = isValid
+            self.emailTextField.borderColor = isValid ? UIColor(named: "buttonDisabled") : UIColor.red
         }).disposed(by: disposeBag)
         self.viewModel.isValidPassword.subscribe(onNext: { isValid in
             self.updateLoginButton()
-            self.passwordTextField.borderColor = isValid ? UIColor.gray : UIColor.red
+            self.passwordTextField.borderColor = isValid ? UIColor(named: "buttonDisabled") : UIColor.red
+            self.passwordTextField.lblError.isHidden = isValid
         }).disposed(by: disposeBag)
     }
     func updateLoginButton() {
@@ -103,7 +113,10 @@ extension LoginViewController: UITextFieldDelegate {
         if textField == self.emailTextField.txtField {
             self.viewModel.validateEmailField()
         } else {
+            let currentString = (textField.text ?? "") as NSString
+            let newString = currentString.replacingCharacters(in: range, with: string)
             self.viewModel.validatePasswordField()
+            return newString.count <= 16
         }
         return true
     }

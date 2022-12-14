@@ -34,8 +34,12 @@ class BaseTabBarController: UITabBarController {
 		self.view.backgroundColor = .white
 		self.tabBar.barTintColor = .white
 		self.tabBar.isTranslucent = false
-		UITabBarItem.appearance().setTitleTextAttributes([.font: UIFont.latoRegularFont(size: 10), .foregroundColor: UIColor(red: 0.511, green: 0.514, blue: 0.533, alpha: 1)], for: .normal)
-		UITabBarItem.appearance().setTitleTextAttributes([.font: UIFont.latoRegularFont(size: 10), .foregroundColor: UIColor.black], for: .selected)
+        let tabBarColor: UIColor = UIColor(red: 0.511, green: 0.514, blue: 0.533, alpha: 1)
+		UITabBarItem.appearance().setTitleTextAttributes(
+            [.font: UIFont.latoRegularFont(size: 10), .foregroundColor: tabBarColor],
+            for: .normal)
+		UITabBarItem.appearance().setTitleTextAttributes(
+            [.font: UIFont.latoRegularFont(size: 10), .foregroundColor: UIColor.black], for: .selected)
 		self.viewControllers = [
 			homeViewController,
 			accountViewController

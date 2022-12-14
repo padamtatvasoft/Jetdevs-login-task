@@ -14,7 +14,6 @@ target 'JetDevsHomeWork' do
   pod 'RxDataSources'
   pod 'RxAlamofire'
   pod 'SVProgressHUD'
-  pod 'Toast-Swift'
   target 'JetDevsHomeWorkTests' do
     inherit! :search_paths
   end

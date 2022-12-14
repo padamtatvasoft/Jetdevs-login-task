@@ -13,7 +13,13 @@ extension String {
             return emailPred.evaluate(with: self)
     }
     func isValidPassword() -> Bool {
-        let passwordRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[d$@$!%*?&#])[A-Za-z\\dd$@$!%*?&#]{8,}"
+        let passwordRegex = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{3,17}$"
         return NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: self)
+    }
+    func dateFromString(_ format: String) -> Date? {
+            let formatter = DateFormatter()
+            formatter.dateFormat = format
+            formatter.timeZone = TimeZone.current
+            return formatter.date(from: self)
     }
 }
